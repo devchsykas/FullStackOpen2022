@@ -1,15 +1,9 @@
 import { useState } from "react";
+import React from "react";
+import Statistics from "./Statistics";
 
 const Button = ({ onClick, text }) => {
   return <button onClick={onClick}>{text}</button>;
-};
-
-const Statistic = ({ text, value }) => {
-  return (
-    <div>
-      {text} {value}
-    </div>
-  );
 };
 
 const App = () => {
@@ -54,12 +48,12 @@ const App = () => {
       <Button text="neutral" onClick={handleNeutralClick} />
       <Button text="bad" onClick={handleBadClick} />
       <h1>statistics</h1>
-      <Statistic text="good" value={good} />
-      <Statistic text="neutral" value={neutral} />
-      <Statistic text="bad" value={bad} />
-      <Statistic text="all" value={all} />
-      <Statistic text="average" value={averageClicks()} />
-      <Statistic text="percentage" value={positiveClicks()} />
+      <Statistics text="good" value={good} />
+      <Statistics text="neutral" value={neutral} />
+      <Statistics text="bad" value={bad} />
+      <Statistics text="all" value={all} />
+      <Statistics text="average" value={averageClicks()} />
+      <Statistics text="percentage" value={positiveClicks()} />
     </div>
   );
 };
