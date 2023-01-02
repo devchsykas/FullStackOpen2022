@@ -3,15 +3,15 @@ import React from "react";
 const StatisticLine = ({ text, value }) => {
   if (text === "positive")
     return (
-      <div>
+      <td>
         {text} {value} %
-      </div>
+      </td>
     );
   else
     return (
-      <div>
+      <td>
         {text} {value}
-      </div>
+      </td>
     );
 };
 

@@ -50,14 +50,16 @@ const App = () => {
       {all === 0 ? (
         "No feedback given"
       ) : (
-        <div>
-          <Statistics text="Good:" value={good} />
-          <Statistics text="Neutral:" value={neutral} />
-          <Statistics text="Bad:" value={bad} />
-          <Statistics text="All:" value={all} />
-          <Statistics text="Average:" value={averageClicks()} />
-          <Statistics text="Percentage:" value={positiveClicks()} />
-        </div>
+        <table>
+          <Statistics
+            goodClick={good}
+            neutralClick={neutral}
+            badClick={bad}
+            allClicks={all}
+            averageClicks={averageClicks()}
+            positiveClicks={positiveClicks()}
+          />
+        </table>
       )}
     </div>
   );

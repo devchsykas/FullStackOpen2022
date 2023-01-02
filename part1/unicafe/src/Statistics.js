@@ -1,11 +1,35 @@
 import React from "react";
 import StatisticLine from "./StatisticLine";
 
-const Statistics = ({ text, value }) => {
+const Statistics = ({
+  goodClick,
+  neutralClick,
+  badClick,
+  allClicks,
+  averageClicks,
+  positiveClicks,
+}) => {
   return (
-    <div>
-      <StatisticLine text={text} value={value} />
-    </div>
+    <tbody>
+      <tr>
+        <StatisticLine text="Good" value={goodClick} />
+      </tr>
+      <tr>
+        <StatisticLine text="Neutral" value={neutralClick} />
+      </tr>
+      <tr>
+        <StatisticLine text="Bad" value={badClick} />
+      </tr>
+      <tr>
+        <StatisticLine text="All" value={allClicks} />
+      </tr>
+      <tr>
+        <StatisticLine text="Average" value={averageClicks} />
+      </tr>
+      <tr>
+        <StatisticLine text="Positive" value={positiveClicks} />
+      </tr>
+    </tbody>
   );
 };
 
