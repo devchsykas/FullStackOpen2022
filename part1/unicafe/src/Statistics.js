@@ -1,9 +1,10 @@
 import React from "react";
+import StatisticLine from "./StatisticLine";
 
 const Statistics = ({ text, value }) => {
   return (
     <div>
-      {text} {value}
+      <StatisticLine text={text} value={value} />
     </div>
   );
 };

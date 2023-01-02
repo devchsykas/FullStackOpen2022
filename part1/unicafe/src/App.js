@@ -2,10 +2,8 @@ import { useState } from "react";
 import React from "react";
 import Statistics from "./Statistics";
 import Header from "./Header";
-
-const Button = ({ onClick, text }) => {
-  return <button onClick={onClick}>{text}</button>;
-};
+import Button from "./Button";
+import StatisticLine from "./StatisticLine";
 
 const App = () => {
   // save clicks of each button to its own state
