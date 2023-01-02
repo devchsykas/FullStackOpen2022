@@ -1,6 +1,7 @@
 import { useState } from "react";
 import React from "react";
 import Statistics from "./Statistics";
+import Header from "./Header";
 
 const Button = ({ onClick, text }) => {
   return <button onClick={onClick}>{text}</button>;
@@ -43,17 +44,23 @@ const App = () => {
 
   return (
     <div>
-      <h1>give feedback</h1>
-      <Button text="good" onClick={handleGoodClick} />
-      <Button text="neutral" onClick={handleNeutralClick} />
-      <Button text="bad" onClick={handleBadClick} />
-      <h1>statistics</h1>
-      <Statistics text="good" value={good} />
-      <Statistics text="neutral" value={neutral} />
-      <Statistics text="bad" value={bad} />
-      <Statistics text="all" value={all} />
-      <Statistics text="average" value={averageClicks()} />
-      <Statistics text="percentage" value={positiveClicks()} />
+      <Header name="Given Feedback" />
+      <Button text="Good" onClick={handleGoodClick} />
+      <Button text="Neutral" onClick={handleNeutralClick} />
+      <Button text="Bad" onClick={handleBadClick} />
+      <Header name="Statistics" />
+      {all === 0 ? (
+        "No feedback given"
+      ) : (
+        <div>
+          <Statistics text="Good:" value={good} />
+          <Statistics text="Neutral:" value={neutral} />
+          <Statistics text="Bad:" value={bad} />
+          <Statistics text="All:" value={all} />
+          <Statistics text="Average:" value={averageClicks()} />
+          <Statistics text="Percentage:" value={positiveClicks()} />
+        </div>
+      )}
     </div>
   );
 };
